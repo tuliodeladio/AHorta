@@ -1,0 +1,122 @@
+.hero {
+    background-image:
+        linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.721) 100%),
+        url('../IMG/background_contato.jpg');
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-content {
+    z-index: 2;
+    text-align: center;
+}
+
+.display-3 {
+    font-weight: 700;
+}
+
+.lead {
+    font-weight: 100;
+    font-size: xx-large;
+}
+
+h6 {
+    font-weight: 500;
+}
+
+
+.navbar{
+    background-color: white;
+}
+
+footer {
+    background-color: #ffffff;
+    color: #6C757D;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #6C757D;
+    text-decoration: none;
+}
+
+
+.navbar-brand img {
+    height: 40px;
+}
+
+
+
+
+.login-form {
+    background-color: white;
+    border-bottom: 2px #CED4DA solid;
+    border-top: 2px #CED4DA solid;
+}
+
+.login-form input {
+    margin-bottom: 15px;
+}
+
+.login-form .btn {
+    background-color: #709A4F;
+    border: none;
+}
+
+.login-form .forgot-password {
+    color: #709A4F;
+}
+
+.login-form .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.hero .container {
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+}
+
+.hero .row {
+    height: 100%;
+    display: flex;
+}
+
+.hero .col-md-6:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .col-md-6:last-child {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row,.col-md-6,.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.clique_aqui {
+    color: #709A4F;
+}
+
+.esqueci_senha {
+    background-color: white !important;
+    border: solid 1px #709A4F !important;
+    color: #709A4F;
+}
