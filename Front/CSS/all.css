@@ -10,7 +10,18 @@
     padding-left: calc(var(--bs-gutter-x)* .5);
     margin-right: auto;
     margin-left: auto;
+
+    
 }
+
+.nav-link {
+    color: black;
+}
+
+.login_link {
+    color: #709A4F !important;
+}
+
 
 .navbar-brand img {
     height: 40px; /* Ajuste o tamanho do logo conforme necessário */

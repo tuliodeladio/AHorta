@@ -5,8 +5,7 @@
     background-size: cover;
     background-position: center;
     color: white;
-    text-shadow: 1px 1px 5px black;
-    height: 100vh; /* Garante que ocupe a altura total da tela */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,26 +32,25 @@
 
 footer {
     background-color: #ffffff;
-    color: #000000;
+    color: #6C757D;
     padding: 20px 0;
 }
 
 footer a {
-    color: #bbb;
+    color: #6C757D;
     text-decoration: none;
 }
 
-footer a:hover {
-    color: white;
-}
 
 .navbar-brand img {
-    height: 40px; /* Ajuste o tamanho do logo conforme necessário */
+    height: 40px;
 }
+
+
+
 
 .login-form {
     background-color: white;
-    padding: 2rem;
     border-bottom: 2px #CED4DA solid;
     border-top: 2px #CED4DA solid;
 }
@@ -74,7 +72,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Ajustes para garantir que o formulário ocupe a altura total da coluna esquerda */
 .hero .container {
     display: flex;
     height: 100%;
@@ -82,7 +79,7 @@ footer a:hover {
 }
 
 .hero .row {
-    height: 100%; /* Adiciona a classe h-100 */
+    height: 100%;
     display: flex;
 }
 
@@ -107,4 +104,14 @@ footer a:hover {
 .row,.col-md-6,.container-fluid {
     margin: 0;
     padding: 0;
+}
+
+.clique_aqui {
+    color: #709A4F;
+}
+
+.esqueci_senha {
+    background-color: white !important;
+    border: solid 1px #709A4F !important;
+    color: #709A4F;
 }

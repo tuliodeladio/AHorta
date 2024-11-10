@@ -1,0 +1,51 @@
+footer {
+    border-top: 1px #CED4DA solid;
+    background-color: #ffffff;
+    color: #6C757D;
+    padding: 20px 0;
+}
+
+.register-base {
+    border-top: 1px #CED4DA solid;
+}
+
+footer a {
+    color: #6C757D;
+    text-decoration: none;
+}
+
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.register-form {
+    background-color: white;
+    
+}
+
+.register-form input {
+    margin-bottom: 15px;
+}
+
+.register-form .btn {
+    background-color: #709A4F;
+    border: none;
+}
+
+.register-form .voltar {
+    color: #709A4F !important;
+    background-color: white !important;
+    border: solid 1px #709A4F !important;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row,.col-md-6,.container-fluid {
+    margin: 0;
+    padding: 0;
+}
