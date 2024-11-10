@@ -1,0 +1,110 @@
+.hero {
+    background-image:
+        linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.721) 100%),
+        url('../IMG/background_home.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    height: 100vh; /* Garante que ocupe a altura total da tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-content {
+    z-index: 2;
+    text-align: center;
+}
+
+.display-3 {
+    font-weight: 700;
+}
+
+.lead {
+    font-weight: 200;
+}
+
+
+.navbar{
+    background-color: white;
+}
+
+footer {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.navbar-brand img {
+    height: 40px; /* Ajuste o tamanho do logo conforme necessário */
+}
+
+.login-form {
+    background-color: white;
+    padding: 2rem;
+    border-bottom: 2px #CED4DA solid;
+    border-top: 2px #CED4DA solid;
+}
+
+.login-form input {
+    margin-bottom: 15px;
+}
+
+.login-form .btn {
+    background-color: #709A4F;
+    border: none;
+}
+
+.login-form .forgot-password {
+    color: #709A4F;
+}
+
+.login-form .forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes para garantir que o formulário ocupe a altura total da coluna esquerda */
+.hero .container {
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+}
+
+.hero .row {
+    height: 100%; /* Adiciona a classe h-100 */
+    display: flex;
+}
+
+.hero .col-md-6:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .col-md-6:last-child {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row,.col-md-6,.container-fluid {
+    margin: 0;
+    padding: 0;
+}
