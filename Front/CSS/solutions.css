@@ -1,0 +1,115 @@
+footer {
+    border-top: 1px #CED4DA solid;
+    background-color: #ffffff;
+    color: #6C757D;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #6C757D;
+    text-decoration: none;
+}
+
+
+
+
+
+.register-form .btn {
+    background-color: #709A4F;
+    border: none;
+}
+
+.register-form .voltar {
+    color: #709A4F !important;
+    background-color: white !important;
+    border: solid 1px #709A4F !important;
+}
+
+.row,.col-md-6,.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.hero {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.609) 80%),
+    url('../IMG/solution1.jpg') no-repeat center center;
+    
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero4 {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.609) 80%),
+    url('../IMG/solution4.jpg') no-repeat center center;
+    
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+
+.lead {
+    font-weight: 200;
+    font-size: calc(10vmin);
+}
+
+.hero2 {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.209) 80%),
+    url('../IMG/solution2.jpg') no-repeat center center;
+
+    min-height: 300px;
+
+}
+
+.hero3 {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.209) 80%),
+    url('../IMG/solution3.jpg') no-repeat center center;
+
+    min-height: 300px;
+
+}
+
+.section1 {
+    min-height: 400px;
+}
+
+
+.text-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.btn {
+    background-color: #709A4F;
+    color: white;
+    height: 40px;
+}
+
+.btn2 {
+    width: 50%;
+}
+
+.lead1 {
+    color: #709A4F;
+    font-weight: 600;
+    font-size: x-large;
+}

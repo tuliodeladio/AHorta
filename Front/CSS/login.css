@@ -51,6 +51,9 @@ footer a {
 
 .login-form {
     background-color: white;
+}
+
+.base {
     border-bottom: 2px #CED4DA solid;
     border-top: 2px #CED4DA solid;
 }
