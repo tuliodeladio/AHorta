@@ -47,9 +47,9 @@
 }
 
 .btn {
-	margin-top: 2em;
 	background-color: #709A4F;
-	border: none;
+	color: white;
+	height: 40px;
 }
 
 .navbar {
