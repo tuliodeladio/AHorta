@@ -1,0 +1,72 @@
+.banner-top {
+	height: 300px;
+
+	background-image:
+		linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.721)),
+		url('../IMG/about/background-banner-top.jpg');
+	
+}
+
+.banner-bottom {
+	height: 300px;
+
+	background-image:
+		linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.721)),
+		url('../IMG/about/background-banner-bottom.jpg');
+}
+
+.banner-bottom, .banner-top {
+	background-size: cover;
+	background-position: center;
+	
+	color: white;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.banner-text {
+	font-weight: 200;
+}
+
+.banner-text-span {
+	font-weight: 700;	
+}
+
+.banner-text, .banner-text-span {
+	font-size: 72px;
+	line-height: 72px;
+}
+
+.first-section-text {
+	height: 306px;
+	width: 356px;
+}
+
+.btn {
+	margin-top: 2em;
+	background-color: #709A4F;
+	border: none;
+}
+
+.navbar {
+	background-color: white;
+}
+
+.navbar-brand img {
+	height: 40px;
+}
+
+footer {
+	background-color: #ffffff;
+	color: #6C757D;
+	padding: 20px 0;
+}
+
+footer a {
+	color: #6C757D;
+	text-decoration: none;
+}
