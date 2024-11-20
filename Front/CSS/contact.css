@@ -62,8 +62,8 @@ footer a {
     background-color: white;
 }
 
-.login-form input {
-    margin-bottom: 15px;
+.login-form input, textarea, .text-danger {
+    margin-bottom: 10px;
 }
 
 .login-form .btn {

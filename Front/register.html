@@ -60,22 +60,43 @@
                               <option value="cliente">Cliente</option>
                             </select>
                           </div>
+                          <div class="mb-3">
+                            <label for="nome" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Insira aqui o seu nome completo" required>
+                            <small id="erroNome" class="text-danger" style="display:none;">O nome completo é obrigatório e deve conter pelo menos dois nomes.</small>
+                        </div>
+                        
                         <div class="mb-3">
-                            <label for="email" class="form-label ">E-mail</label>
+                            <label for="email" class="form-label">E-mail</label>
                             <input type="email" class="form-control" id="email" placeholder="Insira aqui o seu e-mail" required>
+                            <small id="erroEmail" class="text-danger" style="display:none;">Por favor, insira um e-mail válido.</small>
                         </div>
+                        
                         <div class="mb-3">
-                            <label for="email" class="form-label ">Digite novamente o seu E-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="Insira aqui o seu e-mail" required>
+                            <label for="confirmarEmail" class="form-label">Digite novamente o seu E-mail</label>
+                            <input type="email" class="form-control" id="confirmarEmail" placeholder="Insira aqui o seu e-mail" required>
+                            <small id="erroConfirmarEmail" class="text-danger" style="display:none;">Os e-mails não coincidem.</small>
                         </div>
+                        
                         <div class="mb-3">
-                            <label for="password" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="password" placeholder="Insira aqui a senha" required>
+                            <label for="telefone" class="form-label">Número de telefone</label>
+                            <input type="tel" class="form-control" id="telefone" placeholder="XX XXXXX-XXXX" required>
+                            <small id="erroTelefone" class="text-danger" style="display:none;">Por favor, insira um número de telefone válido.</small>
                         </div>
+                
+                        
                         <div class="mb-3">
-                            <label for="password" class="form-label">Digite novamente a seu Senha</label>
-                            <input type="password" class="form-control" id="password" placeholder="Insira aqui a senha" required>
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senha" placeholder="Insira aqui a sua senha" required>
+                            <small id="erroSenha" class="text-danger" style="display:none;"></small>
                         </div>
+                        
+                        <div class="mb-3">
+                            <label for="confirmarSenha" class="form-label">Digite novamente a sua Senha</label>
+                            <input type="password" class="form-control" id="confirmarSenha" placeholder="Insira aqui a sua senha" required>
+                            <small id="erroConfirmarSenha" class="text-danger" style="display:none;">As senhas não coincidem.</small>
+                        </div>
+                        
                         <button type="submit" class="mb-3 btn btn-success w-100">Confirmar</button>
                         <button type="submit" class="voltar mb-3 btn btn-success w-100" onclick="history.back()">Voltar</button>
                     </form>
@@ -102,7 +123,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="./JS/register.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

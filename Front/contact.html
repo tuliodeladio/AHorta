@@ -62,18 +62,26 @@
                         <h3>Entre em contato</h3>
                         <form>
                             <div>
-                                <label for="email" class="form-label ">E-mail</label>
+                                <label for="name" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Digite aqui o seu nome completo" required>
+                                <small id="erroNome" class="text-danger" style="display:none;">O nome completo é obrigatório e deve conter pelo menos dois nomes.</small>
+                            </div>
+                            <div>
+                                <label for="email" class="form-label">E-mail</label>
                                 <input type="email" class="form-control" id="email" placeholder="Digite aqui o seu e-mail" required>
+                                <small id="erroEmail" class="text-danger" style="display:none;">Por favor, insira um e-mail válido.</small>
                             </div>
                             <div>
                                 <label for="telefone" class="form-label">Número de telefone</label>
-                                <input type="telefone" class="form-control" id="password" placeholder="+ 55 (_)" required>
+                                <input type="tel" class="form-control" id="telefone" placeholder="XX XXXXX-XXXX" required>
+                                <small id="erroTelefone" class="text-danger" style="display:none;">Por favor, insira um número de telefone válido no formato XX XXXXX-XXXX.</small>
                             </div>
                             <div>
                                 <label for="msg" class="form-label">Mensagem</label>
-                                <input type="msg" class="form-control" id="password" placeholder="Digite aqui a sua mensagem" required>
+                                <textarea class="form-control" id="mensagem" placeholder="Digite aqui a sua mensagem" required rows="3"></textarea>
+                                <small id="erroMensagem" class="text-danger" style="display:none;">A mensagem deve ter entre 30 e 500 caracteres.</small>
                             </div>
-                            <button type="submit" class="mb-3 btn btn-success w-100">Enviar</button>
+                            <button type="submit" class="btn btn-success w-100">Enviar</button>
                 
                         </form>
                     </div>
@@ -99,7 +107,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="./JS/contact.js"
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
