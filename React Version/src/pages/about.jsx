@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/about.module.css';
-import img1 from '../assets/img/about/image-1.jpg';
+import img1 from '../assets/IMG/about/image-1.jpg';
 
 const About = () => {
     return (
