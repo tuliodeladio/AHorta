@@ -1,0 +1,26 @@
+.base {
+    border-top: 1px #CED4DA solid;
+}
+
+.registerForm {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.registerForm input {
+    margin-bottom: 15px;
+}
+
+.registerForm .btn {
+    background-color: #709A4F;
+    border: none;
+}
+
+.voltar {
+    color: #709A4F !important;
+    background-color: white !important;
+    border: solid 1px #709A4F !important;
+}

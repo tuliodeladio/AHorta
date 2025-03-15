@@ -1,0 +1,79 @@
+.containerFluid {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.609) 80%),
+    url('../assets/IMG/solution1.jpg') no-repeat center center;
+    
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero4 {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.609) 80%),
+    url('../assets/IMG/solution4.jpg') no-repeat center center;
+    
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.lead {
+    font-weight: 200;
+    font-size: calc(10vmin);
+}
+
+.hero2 {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.209) 80%),
+    url('../assets/IMG/solution2.jpg') no-repeat center center;
+
+    min-height: 300px;
+
+}
+
+.hero3 {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.209) 80%),
+    url('../assets/IMG/solution3.jpg') no-repeat center center;
+
+    min-height: 300px;
+
+}
+
+.section1 {
+    min-height: 400px;
+}
+
+.lead1 {
+    color: #709A4F;
+    font-weight: 600;
+    font-size: x-large;
+}
+
+.lead1Container {
+    text-align: center;
+}
+
+.registerFormBtn {
+    background-color: #709A4F;
+    color: white;
+    height: 40px;
+}
+
+.registerFormBtn2 {
+    width: 50%;
+}

@@ -1,0 +1,54 @@
+.hero {
+    background-image:
+        linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.721) 100%),
+        url('../assets/IMG/background_home.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.heroContent {
+    z-index: 2;
+    text-align: center;
+}
+
+.base {
+    border-bottom: 2px #CED4DA solid;
+    border-top: 2px #CED4DA solid;
+}
+
+.loginForm {
+    background-color: white;
+}
+
+.loginForm input {
+    margin-bottom: 10px;
+}
+
+.loginForm .btn {
+    background-color: #709A4F;
+    border: none;
+}
+
+.esqueci_senha {
+    background-color: white !important;
+    border: solid 1px #709A4F !important;
+    color: #709A4F;
+}
+
+.display3 {
+    font-weight: 700;
+}
+
+.lead {
+    font-weight: 100;
+    font-size: xx-large;
+}
+
+.cliqueAqui {
+    color: #709A4F;
+}

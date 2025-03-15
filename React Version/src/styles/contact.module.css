@@ -1,0 +1,57 @@
+.hero {
+    background-image:
+        linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.721) 100%),
+        url('../assets/IMG/background_contato.jpg');
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.heroContent {
+    z-index: 2;
+    text-align: center;
+}
+
+.base {
+    border-bottom: 2px #CED4DA solid;
+    border-top: 2px #CED4DA solid;
+}
+
+.loginForm {
+    background-color: white;
+}
+
+.loginForm input, textarea, .text-danger {
+    margin-bottom: 10px;
+}
+
+.loginForm .btn {
+    background-color: #709A4F;
+    border: none;
+}
+
+.loginForm .forgot-password {
+    color: #709A4F;
+}
+
+.loginForm .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.display-3 {
+    font-weight: 700;
+}
+
+.lead {
+    font-weight: 100;
+    font-size: xx-large;
+}
+
+h6 {
+    font-weight: 500;
+}
