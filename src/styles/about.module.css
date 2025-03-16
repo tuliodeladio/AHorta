@@ -21,7 +21,7 @@
     height: 300px;
 
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.721)),
+        linear-gradient(rgba(0, 0, 0, 0.448), rgba(0, 0, 0, 1.921)),
         url('../assets/IMG/about/background-banner-bottom.jpg');
     
     background-size: cover;
@@ -56,4 +56,10 @@
 
 .atual {
     color: #709A4F;
+}
+
+.registerFormBtn {
+    background-color: #709A4F !important; /* Cor verde */
+    color: white !important; /* Texto branco */
+    width: 100%;
 }

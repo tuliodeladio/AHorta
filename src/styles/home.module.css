@@ -23,12 +23,13 @@
     z-index: 1;
 }
 
-.btn-lg{
+.btnlg{
     background-color: #709A4F;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
     padding-left: 5%;
     padding-right: 5%;
+    color: white;
 }
 
 .heroContent {
@@ -36,12 +37,13 @@
     text-align: center;
 }
 
-.display-3 {
+.display3 {
     font-weight: 700;
+    font-size: 4.5rem;;
 }
 
 .lead {
-    font-weight: 200;
+    font-weight: 100;
 }
 
 footer {

@@ -1,54 +1,88 @@
+.containerFluid {
+    margin: 0;
+    padding: 0;
+}
+
 .hero {
-    background-image:
-        linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.721) 100%),
-        url('../assets/IMG/background_home.png');
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.609) 80%),
+    url('../assets/IMG/solution1.jpg') no-repeat center center;
+    
     background-size: cover;
-    background-position: center;
-    color: white;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-}
-
-.heroContent {
-    z-index: 2;
+    color: white;
     text-align: center;
 }
 
-.base {
-    border-bottom: 2px #CED4DA solid;
-    border-top: 2px #CED4DA solid;
+.hero2 {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.209) 80%),
+    url('../assets/IMG/solution2.jpg') no-repeat center center;
+
+    background-size: cover;
+    height: 300px;
 }
 
-.loginForm {
-    background-color: white;
+.hero3 {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.209) 80%),
+    url('../assets/IMG/solution3.jpg') no-repeat center center;
+
+    background-size: cover;
+    height: 300px;
 }
 
-.loginForm input {
-    margin-bottom: 10px;
+.hero4 {
+    background: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.813), rgba(0, 0, 0, 0.609) 80%),
+    url('../assets/IMG/solution4.jpg') no-repeat center center;
+
+    background-size: cover;
+    height: 300px;
 }
 
-.loginForm .btn {
-    background-color: #709A4F;
-    border: none;
-}
-
-.esqueci_senha {
-    background-color: white !important;
-    border: solid 1px #709A4F !important;
-    color: #709A4F;
-}
-
-.display3 {
-    font-weight: 700;
+.section1 {
+    min-height: 400px;
 }
 
 .lead {
-    font-weight: 100;
-    font-size: xx-large;
+    font-weight: bold;
+    font-size: calc(10vmin);
 }
 
-.cliqueAqui {
+.lead1 {
     color: #709A4F;
+    font-weight: bold;
+}
+
+.lead1Container {
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.registerFormBtn {
+    background-color: #709A4F !important; /* Cor verde */
+    color: white !important; /* Texto branco */
+}
+
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
 }

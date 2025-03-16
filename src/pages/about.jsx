@@ -19,7 +19,7 @@ const About = () => {
                             <h3 className="atual mt-4">Plataforma de Soluções</h3>
                             <p>Somos uma plataforma de busca conectar o produtor com o público que tem interesse em hortas dentro dos centros urbanos. O público pode ser tanto pessoas físicas que buscam mais informações quanto empresas que querem patrocinar a operação de uma horta em troca de maior visibilidade na comunidade.</p>
 
-                            <Link className="btn" to="login">Ver Plataforma</Link>
+                            <Link className={`btn btn-success ${styles.registerFormBtn}`} to="login">Ver Plataforma</Link>
                         </div>
                     </div>
 

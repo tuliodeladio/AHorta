@@ -71,9 +71,12 @@
 .registerFormBtn {
     background-color: #709A4F;
     color: white;
-    height: 40px;
+    width: 50%;
 }
 
 .registerFormBtn2 {
-    width: 50%;
+    background-color: #709A4F;
+    width: 80%;
 }
+
+
