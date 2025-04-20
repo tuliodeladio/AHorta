@@ -14,7 +14,6 @@ const Mapa = () => {
   const [selectedHorta, setSelectedHorta] = useState(null);
 
   const hortas = [
-    // São Paulo - já existentes e novas
     { id: 1, nome: 'Horta das Corujas', localizacao: [-23.567, -46.696], descricao: 'Endereço: Avenida das Corujas, 39, Vila Beatriz, São Paulo - SP' },
     { id: 2, nome: 'Horta Comunitária do Butantã', localizacao: [-23.566, -46.709], descricao: 'Endereço: Av. Corifeu de Azevedo Marques, 2500, Butantã, São Paulo - SP' },
     { id: 3, nome: 'Horta da Mooca', localizacao: [-23.558, -46.599], descricao: 'Endereço: Rua Taquari, 549, Mooca, São Paulo - SP' },
@@ -29,8 +28,7 @@ const Mapa = () => {
     { id: 12, nome: 'Horta da Vila Anglo', localizacao: [-23.5375, -46.6917], descricao: 'Endereço: Praça Antonio Resk, Vila Anglo, São Paulo - SP' }, // [5]
     { id: 13, nome: 'Horta Comunitária do Parque Ipê', localizacao: [-23.6611, -46.7742], descricao: 'Endereço: Rua Marujada, 53, Campo Limpo, São Paulo - SP' }, // [5]
     { id: 14, nome: 'Horta do IEE USP', localizacao: [-23.5618, -46.7356], descricao: 'Endereço: Av. Prof. Luciano Gualberto, 1289, Butantã, São Paulo - SP' }, // [5]
-  
-    // Sarandi - PR (endereços reais, conforme lista oficial) [2]
+
     { id: 15, nome: 'Horta CAIC I', localizacao: [-23.4441, -51.8731], descricao: 'Endereço: Rua Emílio Ângelo Panosol, frente ao 351, Centro, Sarandi - PR' },
     { id: 16, nome: 'Horta CAIC II', localizacao: [-23.4441, -51.8735], descricao: 'Endereço: Rua Emílio Ângelo Panosol, frente ao 407, Centro, Sarandi - PR' },
     { id: 17, nome: 'Horta Monte Rey', localizacao: [-23.4270, -51.8902], descricao: 'Endereço: Rua Pioneiro Francisco Brogio, frente ao 1675, Jardim Monte Rey, Sarandi - PR' },
@@ -42,7 +40,7 @@ const Mapa = () => {
     { id: 23, nome: 'Horta Mauá', localizacao: [-23.4402, -51.8702], descricao: 'Endereço: Av. Silvério, frente ao 530, Conjunto Residencial Mauá, Sarandi - PR' },
     { id: 24, nome: 'Horta São José', localizacao: [-23.4470, -51.8695], descricao: 'Endereço: Av. Brasil, 2418, Residencial São José, Sarandi - PR' },
   
-    // Outros exemplos já existentes do seu array original
+
     { id: 25, nome: 'Horta de Manguinhos', localizacao: [-22.879, -43.241], descricao: 'Endereço: Av. Dom Hélder Câmara, 1184, Benfica, Rio de Janeiro - RJ' },
     { id: 26, nome: 'Hortas Comunitárias de Sete Lagoas', localizacao: [-19.466, -44.246], descricao: 'Endereço: Rua José Maria dos Mares Guia, 100, Centro, Sete Lagoas - MG' },
     { id: 27, nome: 'Horta da Lomba do Pinheiro', localizacao: [-30.097, -51.128], descricao: 'Endereço: Estrada João de Oliveira Remião, 7850, Lomba do Pinheiro, Porto Alegre - RS' },
