@@ -69,13 +69,29 @@
 }
 
 .registerFormBtn {
+    border: 1px solid #709A4F;
     background-color: #709A4F;
     color: white;
     width: 50%;
 }
 
 .registerFormBtn2 {
+    border: 1px solid #709A4F;
     background-color: #709A4F;
+    width: 80%;
+}
+
+.registerFormBtn:hover {
+    border: 1px solid #709A4F;
+    background-color: #ffffff;
+    color: #709A4F ;
+    width: 50%;
+}
+
+.registerFormBtn2:hover {
+    border: 1px solid #709A4F;
+    background-color: #ffffff;
+    color: #709A4F ;
     width: 80%;
 }
 

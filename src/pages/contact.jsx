@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from '../styles/contact.module.css';
 
 const Contact = () => {
@@ -15,12 +14,12 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Lógica para enviar o formulário
+
         if (!validarFormulario()) {
             return;
         }
 
-        // Enviar formulário aqui
+
         console.log('Formulário válido:', { nome, email, telefone, mensagem });
     };
 
@@ -126,7 +125,7 @@ const Contact = () => {
                                     <textarea className="form-control" id="mensagem" value={mensagem} onChange={handleMensagemChange} placeholder="Digite aqui a sua mensagem" required rows="3"></textarea>
                                     {erroMensagem && <small className="text-danger">A mensagem deve ter entre 30 e 500 caracteres.</small>}
                                 </div>
-                                <button type="submit" className="btn btn-success w-100">Enviar</button>
+                                <button type="submit" className={`w-100 btn ${styles.btn}`}>Enviar</button>
                             </form>
                         </div>
                     </div>

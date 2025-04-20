@@ -59,7 +59,15 @@
 }
 
 .registerFormBtn {
-    background-color: #709A4F !important; /* Cor verde */
-    color: white !important; /* Texto branco */
+    border: 1px solid #709A4F;
+    background-color: #709A4F;
+    color: white; 
+    width: 100%;
+}
+
+.registerFormBtn:hover {
+    border: 1px solid #709A4F;
+    background-color: #ffffff;
+    color: #709A4F ;
     width: 100%;
 }

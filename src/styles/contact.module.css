@@ -30,9 +30,18 @@
     margin-bottom: 10px;
 }
 
-.loginForm .btn {
+
+.btn:hover {
+    background-color: white;
+    color: #709A4F;
+    border: 1px solid #709A4F;
+}
+
+
+.btn {
     background-color: #709A4F;
-    border: none;
+    color: white;
+    border: 1px solid #709A4F;
 }
 
 .loginForm .forgot-password {

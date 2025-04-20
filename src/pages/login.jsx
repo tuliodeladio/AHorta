@@ -47,9 +47,9 @@ function Login() {
                                     <label for="password" className="form-label">Senha</label>
                                     <input type="password" className="form-control" id="password" placeholder="Insira aqui a sua senha" required />
                                 </div>
-                                <button type="submit" className="btn btn-success w-100 mb-4" style={{ backgroundColor: '#709A4F', border: 'none' }}>Entrar</button>
-                                <button type="button" className="esqueci_senha mb-4 btn btn-success w-100" style={{ backgroundColor: 'white', border: 'solid 1px #709A4F', color: '#709A4F' }} onClick={handleEsqueciSenha}>Esqueci minha senha</button>
-                                <p className="text-center mt-4">Não tem cadastro ainda? <strong><a className={styles.cliqueAqui} href="register.html">Clique aqui</a></strong> e faça parte dessa comunidade orgânica!</p>
+                                <button type="submit" className={`btn w-100 mb-4 ${styles.registerFormBtn}`}>Entrar</button>
+                                <button type="button" className={`btn w-100 mb-4 ${styles.registerFormBtn4}`} onClick={handleEsqueciSenha}>Esqueci minha senha</button>
+                                <p className="text-center mt-4">Não tem cadastro ainda? <strong><a className={styles.cliqueAqui} href="register">Clique aqui</a></strong> e faça parte dessa comunidade orgânica!</p>
                             </form>
                         </div>
                     </div>
@@ -66,8 +66,8 @@ function Login() {
                                 <label for="emailRecuperacao" className="form-label">E-mail</label>
                                 <input type="email" className="form-control" id="emailRecuperacao" value={email} onChange={handleEmailChange} placeholder="Digite aqui o seu e-mail" required />
                             </div>
-                            <button type="submit" className="btn btn-success w-100" style={{ backgroundColor: '#709A4F', border: 'none' }}>Enviar</button>
-                            <button type="button" className="btn btn-secondary w-100 mt-2" onClick={handleClosePopup}>Cancelar</button>
+                            <button type="submit" className={`btn w-100 ${styles.registerFormBtn}`}>Enviar</button>
+                            <button type="button" className={`btn mt-2 w-100 ${styles.registerFormBtn2}`} onClick={handleClosePopup}>Cancelar</button>
                         </form>
                     </div>
                 </div>

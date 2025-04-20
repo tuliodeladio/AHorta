@@ -13,6 +13,7 @@ import Home from './pages/home';
 import Contact from './pages/contact';
 import Login from './pages/login';
 import Register from './pages/register';
+import Mapa from './pages/map';
 
 import './styles/all.css';
 
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/map" element={<Mapa/>} />
             </Routes>
             <Footer />
         </BrowserRouter>

@@ -59,13 +59,41 @@
 }
 
 .lead1Container {
-    text-align: left; /* Alinha o texto à esquerda */
+    text-align: left;
 }
 
 .registerFormBtn {
-    background-color: #709A4F !important; /* Cor verde */
-    color: white !important; /* Texto branco */
+    border: 1px solid #709A4F;
+    background-color: #709A4F;
+    color: white;
 }
+
+.registerFormBtn:hover {
+    border: 1px solid #709A4F;
+    background-color: #ffffff;
+    color: #709A4F;
+}
+
+.registerFormBtn2 {
+    border: 1px solid #d4484f;
+    background-color: #d4484f;
+    color: white;
+}
+
+.registerFormBtn2:hover {
+    border: 1px solid #d4484f;
+    background-color: #ffffff;
+    color: #d4484f;
+}
+
+
+.cliqueAqui {
+    color: #709A4F;
+    text-decoration: none;
+}
+
+
+
 
 .popupOverlay {
     position: fixed;
@@ -85,4 +113,17 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 500px;
+}
+
+
+.registerFormBtn4:hover {
+    border: 1px solid #709A4F;
+    background-color: #709A4F;
+    color: white;
+}
+
+.registerFormBtn4 {
+    border: 1px solid #709A4F;
+    background-color: #ffffff;
+    color: #709A4F;
 }

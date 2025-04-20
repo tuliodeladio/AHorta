@@ -25,11 +25,16 @@
 
 .btnlg{
     background-color: #709A4F;
-    border: none;
+    border: 1px solid #709A4F;
     border-radius: 4px;
     padding-left: 5%;
     padding-right: 5%;
     color: white;
+}
+
+.btnlg:hover {
+    color: #709A4F;
+    border: 1px solid #709A4F;
 }
 
 .heroContent {

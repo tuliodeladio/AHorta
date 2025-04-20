@@ -23,6 +23,9 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/contact">Entre em contato</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/map">Mapa</Link>
+                        </li>
                     </ul>
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
