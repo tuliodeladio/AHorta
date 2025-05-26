@@ -1,5 +1,4 @@
-import React from 'react';
-import { Hero, HeroOverlay, HeroContent, Btnlg, Display3, Lead } from '../styles/home'
+import { Hero, HeroOverlay, HeroContent, Btnlg, Display3 } from '../styles/home'
 
 const Home = () => {
     return (
