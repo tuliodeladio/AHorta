@@ -1,17 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../styles/home.module.css';
+import { Hero, HeroOverlay, HeroContent, Btnlg, Display3 } from '../styles/home'
 
 const Home = () => {
     return (
-        <div className={styles.hero}>
-            <div className={styles.heroOverlay}></div>
-            <div className={`${styles.container} ${styles.heroContent} d-flex flex-column align-items-center justify-content-center`}>
-                <h1 className={`display-3 ${styles.display3}`}>AHorta</h1>
+        <Hero>
+            <HeroOverlay></HeroOverlay>
+            <HeroContent className={`d-flex flex-column align-items-center justify-content-center`}>
+                <Display3 className={`display-3`}>AHorta</Display3>
                 <p className={`lead col-md-9 p-5 text-center`}>Conectamos pessoas, empresas e produtores para transformar cidades com hortas urbanas, sustentabilidade e alimentação saudável.</p>
-                <Link to="solutions" className={`btn btn-lg w-10 ${styles.btnlg}`}>Ver mais informações</Link>
-            </div>
-        </div>
+                <Btnlg to="solutions" className={`btn btn-lg w-10`}>Ver mais informações</Btnlg>
+            </HeroContent>
+        </Hero>
     );
 };
 

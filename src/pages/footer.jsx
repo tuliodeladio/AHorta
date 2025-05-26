@@ -1,9 +1,9 @@
 import React from 'react';
-
+import { StyledFooter } from '../styles/footer';
 
 const Footer = () => {
     return (
-        <footer className="text-center">
+        <StyledFooter className="text-center">
             <div className="container">
                 <div className="row">
                     <div className="col-md-4">
@@ -17,7 +17,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </footer>
+        </StyledFooter>
     );
 };
 
