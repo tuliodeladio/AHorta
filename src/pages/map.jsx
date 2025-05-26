@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Container, Row, Col } from 'react-bootstrap';
-import styles from '../styles/map.module.css';
+import {
+  BannerTop,
+  BannerText,
+  BannerTextSpan,
+  StyledContainerFluid,
+  MapBox,
+  PopupContent,
+  RegisterFormBtn
+} from '../styles/map';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -40,7 +48,6 @@ const Mapa = () => {
     { id: 23, nome: 'Horta Mauá', localizacao: [-23.4402, -51.8702], descricao: 'Endereço: Av. Silvério, frente ao 530, Conjunto Residencial Mauá, Sarandi - PR' },
     { id: 24, nome: 'Horta São José', localizacao: [-23.4470, -51.8695], descricao: 'Endereço: Av. Brasil, 2418, Residencial São José, Sarandi - PR' },
   
-
     { id: 25, nome: 'Horta de Manguinhos', localizacao: [-22.879, -43.241], descricao: 'Endereço: Av. Dom Hélder Câmara, 1184, Benfica, Rio de Janeiro - RJ' },
     { id: 26, nome: 'Hortas Comunitárias de Sete Lagoas', localizacao: [-19.466, -44.246], descricao: 'Endereço: Rua José Maria dos Mares Guia, 100, Centro, Sete Lagoas - MG' },
     { id: 27, nome: 'Horta da Lomba do Pinheiro', localizacao: [-30.097, -51.128], descricao: 'Endereço: Estrada João de Oliveira Remião, 7850, Lomba do Pinheiro, Porto Alegre - RS' },
@@ -53,59 +60,51 @@ const Mapa = () => {
     { id: 34, nome: 'Horta do Parque Ecológico', localizacao: [-15.593, -56.104], descricao: 'Endereço: Av. Miguel Sutil, 8000, Jardim Aquários, Cuiabá - MT' },
     { id: 35, nome: 'Horta Comunitária de Recife', localizacao: [-8.061, -34.871], descricao: 'Endereço: Rua da Aurora, 125, Boa Vista, Recife - PE' }
   ];
-  
 
   return (
-    <Container fluid className={styles.containerFluid}>
-        <div className={styles.bannerTop}>
-            <p className={`${styles.bannerText}`}>Hortas Comunitárias pelo</p>
-            <span className={styles.bannerTextSpan}>Brasil</span>
-        </div>
+    <StyledContainerFluid fluid>
+      <BannerTop>
+        <BannerText>Hortas Comunitárias pelo</BannerText>
+        <BannerTextSpan>Brasil</BannerTextSpan>
+      </BannerTop>
 
       <Row className="justify-content-center align-content-center mt-5 mb-5">
-        <Col xs={12} md={10} lg={8} className={styles.mapContainer}>
-          <MapContainer
-            center={[-15.7797, -47.9297]}
-            zoom={4}
-            scrollWheelZoom={false}
-            className={styles.leafletContainer}
-          >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
+        <Col xs={12} md={10} lg={8}>
+          <MapBox>
+            <MapContainer
+              center={[-15.7797, -47.9297]}
+              zoom={4}
+              scrollWheelZoom={false}
+              className="leaflet-container"
+            >
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-            {hortas.map((horta) => (
-              <Marker
-                key={horta.id}
-                position={horta.localizacao}
-                icon={gardenIcon}
-                eventHandlers={{
-                  click: () => setSelectedHorta(horta),
-                }}
-              />
-            ))}
+              {hortas.map((horta) => (
+                <Marker
+                  key={horta.id}
+                  position={horta.localizacao}
+                  icon={gardenIcon}
+                  eventHandlers={{ click: () => setSelectedHorta(horta) }}
+                />
+              ))}
 
-            {selectedHorta && (
-              <Popup
-                position={selectedHorta.localizacao}
-                onClose={() => setSelectedHorta(null)}
-              >
-                <div className={styles.popup}>
-                  <h5>{selectedHorta.nome}</h5>
-                  <p>{selectedHorta.descricao}</p>
-                  <button
-                    className={`${styles.registerFormBtn} w-100`}
-                    onClick={() => setSelectedHorta(null)}
-                  >
-                    Fechar
-                  </button>
-                </div>
-              </Popup>
-            )}
-          </MapContainer>
+              {selectedHorta && (
+                <Popup
+                  position={selectedHorta.localizacao}
+                  onClose={() => setSelectedHorta(null)}
+                >
+                  <PopupContent>
+                    <h5>{selectedHorta.nome}</h5>
+                    <p>{selectedHorta.descricao}</p>
+                    <RegisterFormBtn className="w-100" onClick={() => setSelectedHorta(null)}>Fechar</RegisterFormBtn>
+                  </PopupContent>
+                </Popup>
+              )}
+            </MapContainer>
+          </MapBox>
         </Col>
       </Row>
-    </Container>
+    </StyledContainerFluid>
   );
 };
 
