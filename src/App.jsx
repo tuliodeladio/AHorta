@@ -15,8 +15,6 @@ import Login from './pages/login';
 import Register from './pages/register';
 import Mapa from './pages/map';
 
-import './styles/all.css';
-
 function App() {
     return (
         <BrowserRouter>
