@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
 import {
   Base,
   Hero,
@@ -9,58 +13,40 @@ import {
   Lead
 } from '../styles/contact';
 
+const phoneRegex = /^\d{2}\s\d{5}-\d{4}$/;
+
+const schema = yup.object().shape({
+  nome: yup
+    .string()
+    .test('full-name', 'O nome completo é obrigatório e deve conter pelo menos dois nomes.', value => {
+      if (!value) return false;
+      const partes = value.trim().split(/\s+/);
+      return partes.length >= 2 && partes.every(p => p.length > 0);
+    })
+    .required('Nome é obrigatório'),
+  email: yup.string().email('Por favor, insira um e-mail válido.').required('E-mail é obrigatório'),
+  telefone: yup
+    .string()
+    .matches(phoneRegex, 'Por favor, insira um número de telefone válido no formato XX XXXXX-XXXX.')
+    .required('Telefone é obrigatório'),
+  mensagem: yup
+    .string()
+    .min(30, 'A mensagem deve ter entre 30 e 500 caracteres.')
+    .max(500, 'A mensagem deve ter entre 30 e 500 caracteres.')
+    .required('Mensagem é obrigatória'),
+});
+
 const Contact = () => {
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [telefone, setTelefone] = useState('');
-  const [mensagem, setMensagem] = useState('');
-  const [erroNome, setErroNome] = useState(false);
-  const [erroEmail, setErroEmail] = useState(false);
-  const [erroTelefone, setErroTelefone] = useState(false);
-  const [erroMensagem, setErroMensagem] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!validarFormulario()) return;
-
-    console.log('Formulário válido:', { nome, email, telefone, mensagem });
-  };
-
-  const validarFormulario = () => {
-    let valido = true;
-
-    if (!nome || nome.split(/\s+/).length < 2) {
-      setErroNome(true);
-      valido = false;
-    } else {
-      setErroNome(false);
-    }
-
-    const padraoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !padraoEmail.test(email)) {
-      setErroEmail(true);
-      valido = false;
-    } else {
-      setErroEmail(false);
-    }
-
-    const padraoTelefone = /^\d{2}\s\d{5}-\d{4}$/;
-    if (!telefone || !padraoTelefone.test(telefone)) {
-      setErroTelefone(true);
-      valido = false;
-    } else {
-      setErroTelefone(false);
-    }
-
-    if (!mensagem || mensagem.length < 30 || mensagem.length > 500) {
-      setErroMensagem(true);
-      valido = false;
-    } else {
-      setErroMensagem(false);
-    }
-
-    return valido;
+  const onSubmit = (data) => {
+    console.log('Formulário válido:', data);
   };
 
   return (
@@ -84,22 +70,18 @@ const Contact = () => {
                 AHorta proporciona a plataforma para a interação entre hortas comunitárias e grandes empresas que podem contribuir com o crescimento do cultivo orgânico em troca de maior visibilidade nas próprias hortas. Entre em contato e entenda melhor essa oportunidade.
               </h6>
               <h3>Fale com a gente</h3>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                   <label htmlFor="nome" className="form-label">Nome Completo</label>
                   <input
                     type="text"
                     className="form-control"
                     id="nome"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
                     placeholder="Digite aqui o seu nome completo"
-                    required
+                    {...register('nome')}
                   />
-                  {erroNome && (
-                    <small className="text-danger">
-                      O nome completo é obrigatório e deve conter pelo menos dois nomes.
-                    </small>
+                  {errors.nome && (
+                    <small className="text-danger">{errors.nome.message}</small>
                   )}
                 </div>
 
@@ -109,15 +91,11 @@ const Contact = () => {
                     type="email"
                     className="form-control"
                     id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="Digite aqui o seu e-mail"
-                    required
+                    {...register('email')}
                   />
-                  {erroEmail && (
-                    <small className="text-danger">
-                      Por favor, insira um e-mail válido.
-                    </small>
+                  {errors.email && (
+                    <small className="text-danger">{errors.email.message}</small>
                   )}
                 </div>
 
@@ -127,15 +105,11 @@ const Contact = () => {
                     type="tel"
                     className="form-control"
                     id="telefone"
-                    value={telefone}
-                    onChange={(e) => setTelefone(e.target.value)}
                     placeholder="XX XXXXX-XXXX"
-                    required
+                    {...register('telefone')}
                   />
-                  {erroTelefone && (
-                    <small className="text-danger">
-                      Por favor, insira um número de telefone válido no formato XX XXXXX-XXXX.
-                    </small>
+                  {errors.telefone && (
+                    <small className="text-danger">{errors.telefone.message}</small>
                   )}
                 </div>
 
@@ -145,15 +119,11 @@ const Contact = () => {
                     className="form-control"
                     id="mensagem"
                     rows="3"
-                    value={mensagem}
-                    onChange={(e) => setMensagem(e.target.value)}
                     placeholder="Digite aqui a sua mensagem"
-                    required
-                  ></textarea>
-                  {erroMensagem && (
-                    <small className="text-danger">
-                      A mensagem deve ter entre 30 e 500 caracteres.
-                    </small>
+                    {...register('mensagem')}
+                  />
+                  {errors.mensagem && (
+                    <small className="text-danger">{errors.mensagem.message}</small>
                   )}
                 </div>
 
