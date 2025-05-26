@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import {
   Base,
   Hero,
@@ -12,18 +15,39 @@ import {
   Popup
 } from '../styles/login';
 
+const loginSchema = yup.object().shape({
+  email: yup.string().email('E-mail inválido').required('E-mail é obrigatório'),
+  password: yup.string().required('Senha é obrigatória'),
+});
+
+const recoverySchema = yup.object().shape({
+  email: yup.string().email('E-mail inválido').required('E-mail é obrigatório'),
+});
+
 function Login() {
   const [showPopup, setShowPopup] = useState(false);
-  const [email, setEmail] = useState('');
 
-  const handleEsqueciSenha = () => setShowPopup(true);
-  const handleClosePopup = () => setShowPopup(false);
-  const handleEmailChange = (e) => setEmail(e.target.value);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(loginSchema) });
 
-  const handleSubmitEmail = (e) => {
-    e.preventDefault();
-    console.log('E-mail enviado:', email);
+  const {
+    register: registerRecovery,
+    handleSubmit: handleSubmitRecovery,
+    formState: { errors: errorsRecovery },
+    reset: resetRecovery,
+  } = useForm({ resolver: yupResolver(recoverySchema) });
+
+  const onSubmitLogin = (data) => {
+    console.log('Login data:', data);
+  };
+
+  const onSubmitRecovery = (data) => {
+    console.log('Recuperação de senha com e-mail:', data.email);
     setShowPopup(false);
+    resetRecovery();
   };
 
   return (
@@ -44,19 +68,35 @@ function Login() {
           <div className="col-md-4 row">
             <LoginForm className="w-100 p-5 min-vh-100 col-md-5">
               <h3 className="mb-4">Login</h3>
-              <form>
+              <form onSubmit={handleSubmit(onSubmitLogin)}>
                 <div className="mb-4">
                   <label htmlFor="email" className="form-label">E-mail</label>
-                  <input type="email" className="form-control" id="email" placeholder="Digite aqui o seu e-mail" required />
+                  <input
+                    type="email"
+                    className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                    id="email"
+                    placeholder="Digite aqui o seu e-mail"
+                    {...register('email')}
+                  />
+                  {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
                 </div>
 
                 <div className="mb-4">
                   <label htmlFor="password" className="form-label">Senha</label>
-                  <input type="password" className="form-control" id="password" placeholder="Insira aqui a sua senha" required />
+                  <input
+                    type="password"
+                    className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                    id="password"
+                    placeholder="Insira aqui a sua senha"
+                    {...register('password')}
+                  />
+                  {errors.password && <div className="invalid-feedback">{errors.password.message}</div>}
                 </div>
 
                 <RegisterFormBtn type="submit" className="mb-4">Entrar</RegisterFormBtn>
-                <RegisterFormBtn4 type="button" className="mb-4" onClick={handleEsqueciSenha}>Esqueci minha senha</RegisterFormBtn4>
+                <RegisterFormBtn4 type="button" className="mb-4" onClick={() => setShowPopup(true)}>
+                  Esqueci minha senha
+                </RegisterFormBtn4>
 
                 <p className="text-center mt-4">
                   Não tem cadastro ainda? <strong><CliqueAqui href="/register">Clique aqui</CliqueAqui></strong> e faça parte dessa comunidade orgânica!
@@ -73,13 +113,20 @@ function Login() {
         <PopupOverlay>
           <Popup>
             <h3 className="mb-4">Recuperar Senha</h3>
-            <form onSubmit={handleSubmitEmail}>
+            <form onSubmit={handleSubmitRecovery(onSubmitRecovery)}>
               <div className="mb-4">
                 <label htmlFor="emailRecuperacao" className="form-label">E-mail</label>
-                <input type="email" className="form-control" id="emailRecuperacao" value={email} onChange={handleEmailChange} placeholder="Digite aqui o seu e-mail" required />
+                <input
+                  type="email"
+                  className={`form-control ${errorsRecovery.email ? 'is-invalid' : ''}`}
+                  id="emailRecuperacao"
+                  placeholder="Digite aqui o seu e-mail"
+                  {...registerRecovery('email')}
+                />
+                {errorsRecovery.email && <div className="invalid-feedback">{errorsRecovery.email.message}</div>}
               </div>
               <RegisterFormBtn type="submit">Enviar</RegisterFormBtn>
-              <RegisterFormBtn2 type="button" className="mt-2" onClick={handleClosePopup}>Cancelar</RegisterFormBtn2>
+              <RegisterFormBtn2 type="button" className="mt-2" onClick={() => setShowPopup(false)}>Cancelar</RegisterFormBtn2>
             </form>
           </Popup>
         </PopupOverlay>
