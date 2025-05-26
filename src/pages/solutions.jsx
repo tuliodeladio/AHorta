@@ -1,54 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../styles/solutions.module.css';
+import { ContainerFluid, Hero, Hero2, Hero3, Hero4, Lead, Lead1, Lead1Container, Section1, RegisterFormBtn } from "../styles/solutions"
 
 const Solutions = () => {
     return (
-        <div className={styles.containerFluid}>
-            <div className={styles.hero}>
-                <h1 className={styles.lead}>Conectando<br></br>pessoas e <strong>natureza</strong></h1>
-            </div>
+        <ContainerFluid>
+            <Hero>
+                <Lead>Conectando<br></br>pessoas e <strong>natureza</strong></Lead>
+            </Hero>
 
-
-            <div className={`row p-5 ${styles.section1}`}>
+            <Section1 className={`row p-5`}>
                 <div className="col-md-6 d-flex align-items-center">
-                    <div className={`d-flex flex-column align-items-center justify-content-center ${styles.lead1Container}`}>
-                        <p className={`${styles.lead1} mb-4`}>Conectando pessoas</p>
+                    <Lead1Container className={`d-flex flex-column align-items-center justify-content-center`}>
+                        <Lead1 className={`mb-4`}>Conectando pessoas</Lead1>
                         <p className="mb-4">Lorem ipsum dolor sit amet consectetur. Molestie massa dignissim amet est elementum quam facilisi. Sem duis iaculis diam dolor mi tristique dolor. Vel ut risus adipiscing augue justo luctus sit justo. Turpis nunc pharetra augue pellentesque dolor adipiscing ipsum nullam sit.</p>
-                        <Link className={`btn ${styles.registerFormBtn}`} to="/login">Ver Plataforma</Link>
-                    </div>
+                        <RegisterFormBtn className={`btn`} to="/login">Ver Plataforma</RegisterFormBtn>
+                    </Lead1Container>
                 </div>
                 <div className="col-md-6">
-                    <div className={styles.hero2}></div>
+                    <Hero2></Hero2>
                 </div>
-            </div>
+            </Section1>
 
-
-            <div className={`row p-5 align-items-center ${styles.section1}`}>
+            <Section1 className={`row p-5 align-items-center`}>
                 <div className="col-md-6">
-                    <div className={styles.hero3}></div>
+                    <Hero3></Hero3>
                 </div>
                 <div className="col-md-6 d-flex align-items-center justify-content-center">
-                    <div className={`d-flex flex-column align-items-center justify-content-center ${styles.lead1Container}`}>
-                        <p className={`${styles.lead1} mb-4`}>Informando a comunidade</p>
+                    <Lead1Container className={`d-flex flex-column align-items-center justify-content-center`}>
+                        <Lead1 className={`mb-4`}>Informando a comunidade</Lead1>
                         <p className="mb-4">Lorem ipsum dolor sit amet consectetur. Molestie massa dignissim amet est elementum quam facilisi. Sem duis iaculis diam dolor mi tristique dolor. Vel ut risus adipiscing augue justo luctus sit justo. Turpis nunc pharetra augue pellentesque dolor adipiscing ipsum nullam sit.</p>
-                        <Link className={`btn ${styles.registerFormBtn}`} to="/about">Ver mais informações</Link>
-                    </div>
+                        <RegisterFormBtn className={`btn`} to="/about">Ver mais informações</RegisterFormBtn>
+                    </Lead1Container>
                 </div>
-            </div>
+            </Section1>
 
+            <Hero4></Hero4>
 
-            <div className={styles.hero4}></div>
-
-
-            <div className={`row p-5 ${styles.section1} align-items-center justify-content-center`}>
+            <Section1 className={`row p-5 align-items-center justify-content-center`}>
                 <div className="col-md-6 d-flex flex-column align-items-center text-center justify-content-between align-items-center">
-                    <p className={`${styles.lead1} mb-4`}>Seja um patrocinador:</p>
+                    <Lead1 className={`mb-4`}>Seja um patrocinador:</Lead1>
                     <p className="mb-4">Lorem ipsum dolor sit amet consectetur. Molestie massa dignissim amet est elementum quam facilisi. Sem duis iaculis diam dolor mi tristique dolor. Vel ut risus adipiscing augue justo luctus sit justo. Turpis nunc pharetra augue pellentesque dolor adipiscing ipsum nullam sit.</p>
-                    <Link to="/contact" className={`btn ${styles.registerFormBtn}`}>Entre em contato</Link>
+                    <RegisterFormBtn to="/contact" className={`btn`}>Entre em contato</RegisterFormBtn>
                 </div>
-            </div>
-        </div>
+            </Section1>
+        </ContainerFluid>
     );
 };
 
