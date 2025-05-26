@@ -1,25 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../styles/about.module.css';
+import { BannerTop, BannerBottom, BannerText, BannerTextSpan, TextSection, RegisterFormBtn } from "../styles/about.js"
 import img1 from '../assets/IMG/about/image-1.jpg';
 
 const About = () => {
     return (
         <div>
-            <div className={styles.bannerTop}>
-                <p className={styles.bannerText}>Facilitar é cultivar o</p>
-                <span className={styles.bannerTextSpan}>crescimento</span>
-            </div>
+            <BannerTop>
+                <BannerText>Facilitar é cultivar o</BannerText>
+                <BannerTextSpan>crescimento</BannerTextSpan>
+            </BannerTop>
 
-            <div className={styles.textSection}>
+            <TextSection>
                 <div className="container d-flex flex-column justify-content-center">
-                    <div className="row d-flex justify-content-between mb-5">
-                        <img src={img1} height="305px" width="418px" className="col-md-5" />
+                    <div className="row justify-content-between mb-5">
+                        <div className="col-md-5">
+                            <img src={img1} className="img-fluid" alt="Descrição" />
+                        </div>
                         <div className="w-50 col-md-5">
                             <h3 className="atual mt-4">Plataforma de Soluções</h3>
                             <p>Somos uma plataforma de busca conectar o produtor com o público que tem interesse em hortas dentro dos centros urbanos. O público pode ser tanto pessoas físicas que buscam mais informações quanto empresas que querem patrocinar a operação de uma horta em troca de maior visibilidade na comunidade.</p>
 
-                            <Link className={`btn ${styles.registerFormBtn}`} to="../login">Ver Plataforma</Link>
+                            <RegisterFormBtn to="/login">Ver Plataforma</RegisterFormBtn>
                         </div>
                     </div>
 
@@ -30,12 +30,12 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </TextSection>
 
-            <div className={styles.bannerBottom}>
-                <p className={styles.bannerText}>Sua <span className={styles.bannerTextSpan}>agrotech</span></p>
-                <p className={styles.bannerText}>na palma da sua mão</p>
-            </div>
+            <BannerBottom>
+                <BannerText>Sua <BannerTextSpan>agrotech</BannerTextSpan></BannerText>
+                <BannerText>na palma da sua mão</BannerText>
+            </BannerBottom>
         </div>
     );
 };
