@@ -47,6 +47,6 @@ export const Btnlg = styled(Link)`
 `;
 
 export const Display3 = styled.h1`
-	font weight: 700;
+	font-weight: 700;
 	font-size: 4.5rem;;
 `;

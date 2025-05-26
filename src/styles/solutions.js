@@ -10,6 +10,7 @@ import hero4Background from "../assets/IMG/solution4.jpg";
 export const ContainerFluid = styled.div`
   margin: 0;
   padding: 0;
+  width: 100%;
   overflow-x: hidden;
 `;
 
