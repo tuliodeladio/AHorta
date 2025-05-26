@@ -18,10 +18,10 @@ const Navbar = () => {
                             <Link className="nav-link" to="/solutions">Soluções</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">Quem nós somos</Link>
+                            <Link className="nav-link" to="/about">Quem somos</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/contact">Entre em contato</Link>
+                            <Link className="nav-link" to="/contact">Fale com a gente</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/map">Mapa</Link>
@@ -29,10 +29,10 @@ const Navbar = () => {
                     </ul>
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
+                            <Link className="nav-link" to="/login">Entrar</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/register">Cadastre-se</Link>
+                            <Link className="nav-link" to="/register">Faça Parte</Link>
                         </li>
                     </ul>
                 </div>
