@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
 import {
   Base,
   RegisterForm,
@@ -7,64 +11,48 @@ import {
   ErrorText
 } from '../styles/register.js';
 
+const phoneRegex = /^\d{2}\s\d{5}-\d{4}$/;
+
+const schema = yup.object().shape({
+  tipoCadastro: yup.string().required('Tipo de cadastro é obrigatório'),
+  nome: yup
+    .string()
+    .test('full-name', 'O nome completo é obrigatório e deve conter pelo menos dois nomes.', value => {
+      if (!value) return false;
+      const partes = value.trim().split(/\s+/);
+      return partes.length >= 2 && partes.every(p => p.length > 0);
+    })
+    .required('Nome é obrigatório'),
+  email: yup.string().email('E-mail inválido').required('E-mail é obrigatório'),
+  confirmarEmail: yup
+    .string()
+    .oneOf([yup.ref('email'), null], 'Os e-mails não coincidem')
+    .required('Confirmação de e-mail é obrigatória'),
+  telefone: yup
+    .string()
+    .matches(phoneRegex, 'Por favor, insira um número de telefone válido. Ex: 11 99999-9999')
+    .required('Telefone é obrigatório'),
+  senha: yup
+    .string()
+    .min(8, 'A senha deve ter pelo menos 8 caracteres')
+    .required('Senha é obrigatória'),
+  confirmarSenha: yup
+    .string()
+    .oneOf([yup.ref('senha'), null], 'As senhas não coincidem')
+    .required('Confirmação de senha é obrigatória'),
+});
+
 function Register() {
-  const [tipoCadastro, setTipoCadastro] = useState('');
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [confirmarEmail, setConfirmarEmail] = useState('');
-  const [telefone, setTelefone] = useState('');
-  const [senha, setSenha] = useState('');
-  const [confirmarSenha, setConfirmarSenha] = useState('');
-  const [erroNome, setErroNome] = useState(false);
-  const [erroEmail, setErroEmail] = useState(false);
-  const [erroTelefone, setErroTelefone] = useState(false);
-  const [erroSenha, setErroSenha] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const handleNomeChange = (e) => {
-    const partesNome = e.target.value.trim().split(/\s+/);
-    if (partesNome.length >= 2 && partesNome.every(parte => parte.length > 0)) {
-      setErroNome(false);
-    } else {
-      setErroNome(true);
-    }
-    setNome(e.target.value);
-  };
-
-  const validarEmail = () => {
-    const padraoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!padraoEmail.test(email)) {
-      setErroEmail('O e-mail inserido não é válido.');
-    } else if (email !== confirmarEmail) {
-      setErroEmail('Os e-mails não coincidem.');
-    } else {
-      setErroEmail(false);
-    }
-  };
-
-  const validarTelefone = (e) => {
-    const padraoTelefone = /^\d{2}\s\d{5}-\d{4}$/;
-    if (padraoTelefone.test(e.target.value)) {
-      setErroTelefone(false);
-    } else {
-      setErroTelefone(true);
-    }
-    setTelefone(e.target.value);
-  };
-
-  const validarSenha = () => {
-    if (senha.length < 8) {
-      setErroSenha('A senha deve ter pelo menos 8 caracteres.');
-    } else if (senha !== confirmarSenha) {
-      setErroSenha('As senhas não coincidem.');
-    } else {
-      setErroSenha(false);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    validarEmail();
-    validarSenha();
+  const onSubmit = (data) => {
+    console.log('Dados enviados:', data);
   };
 
   return (
@@ -75,98 +63,94 @@ function Register() {
           <div className="col-md-4 h-100">
             <RegisterForm>
               <h3>Cadastre-se</h3>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                   <label htmlFor="tipoCadastro" className="form-label">Tipo de cadastro</label>
                   <select
                     className="form-select"
                     id="tipoCadastro"
-                    value={tipoCadastro}
-                    onChange={(e) => setTipoCadastro(e.target.value)}
-                    required
+                    {...register('tipoCadastro')}
                   >
                     <option value="" disabled>Selecione uma opção</option>
                     <option value="donoHorta">Dono de Horta</option>
                     <option value="voluntario">Voluntário</option>
                     <option value="cliente">Cliente</option>
                   </select>
+                  {errors.tipoCadastro && <ErrorText>{errors.tipoCadastro.message}</ErrorText>}
                 </div>
+
                 <div>
                   <label htmlFor="nome" className="form-label">Nome Completo</label>
                   <input
                     type="text"
                     className="form-control"
                     id="nome"
-                    value={nome}
-                    onChange={handleNomeChange}
                     placeholder="Insira aqui o seu nome completo"
-                    required
+                    {...register('nome')}
                   />
-                  {erroNome && <ErrorText>O nome completo é obrigatório e deve conter pelo menos dois nomes.</ErrorText>}
+                  {errors.nome && <ErrorText>{errors.nome.message}</ErrorText>}
                 </div>
+
                 <div>
                   <label htmlFor="email" className="form-label">E-mail</label>
                   <input
                     type="email"
                     className="form-control"
                     id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="Insira aqui o seu e-mail"
-                    required
+                    {...register('email')}
                   />
-                  {erroEmail && <ErrorText>{erroEmail}</ErrorText>}
+                  {errors.email && <ErrorText>{errors.email.message}</ErrorText>}
                 </div>
+
                 <div>
                   <label htmlFor="confirmarEmail" className="form-label">Digite novamente o seu E-mail</label>
                   <input
                     type="email"
                     className="form-control"
                     id="confirmarEmail"
-                    value={confirmarEmail}
-                    onChange={(e) => setConfirmarEmail(e.target.value)}
                     placeholder="Insira aqui o seu e-mail"
-                    required
+                    {...register('confirmarEmail')}
                   />
+                  {errors.confirmarEmail && <ErrorText>{errors.confirmarEmail.message}</ErrorText>}
                 </div>
+
                 <div>
                   <label htmlFor="telefone" className="form-label">Número de telefone</label>
                   <input
                     type="tel"
                     className="form-control"
                     id="telefone"
-                    value={telefone}
-                    onChange={validarTelefone}
                     placeholder="XX XXXXX-XXXX"
-                    required
+                    {...register('telefone')}
                   />
-                  {erroTelefone && <ErrorText>Por favor, insira um número de telefone válido.</ErrorText>}
+                  {errors.telefone && <ErrorText>{errors.telefone.message}</ErrorText>}
                 </div>
+
                 <div>
                   <label htmlFor="senha" className="form-label">Senha</label>
                   <input
                     type="password"
                     className="form-control"
                     id="senha"
-                    value={senha}
-                    onChange={(e) => setSenha(e.target.value)}
                     placeholder="Insira aqui a sua senha"
-                    required
+                    {...register('senha')}
                   />
+                  {errors.senha && <ErrorText>{errors.senha.message}</ErrorText>}
                 </div>
+
                 <div>
                   <label htmlFor="confirmarSenha" className="form-label">Digite novamente a sua Senha</label>
                   <input
                     type="password"
                     className="form-control"
                     id="confirmarSenha"
-                    value={confirmarSenha}
-                    onChange={(e) => setConfirmarSenha(e.target.value)}
                     placeholder="Insira aqui a sua senha"
-                    required
+                    {...register('confirmarSenha')}
                   />
-                  {erroSenha && <ErrorText>{erroSenha}</ErrorText>}
+                  {errors.confirmarSenha && <ErrorText>{errors.confirmarSenha.message}</ErrorText>}
                 </div>
+
                 <ConfirmButton type="submit">Confirmar</ConfirmButton>
                 <VoltarButton type="button" onClick={() => window.history.back()}>
                   Voltar
